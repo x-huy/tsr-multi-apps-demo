@@ -1,0 +1,7 @@
+{
+  "name": "@my/app-shell",
+  "version": "0.0.0",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {}
+}

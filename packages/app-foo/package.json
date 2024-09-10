@@ -1,0 +1,7 @@
+{
+  "name": "@my/app-foo",
+  "version": "0.0.0",
+  "devDependencies": {},
+  "scripts": {
+  }
+}

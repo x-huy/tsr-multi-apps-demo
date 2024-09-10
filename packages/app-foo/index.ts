@@ -1,0 +1,1 @@
+export { fooRoute } from './routes';
