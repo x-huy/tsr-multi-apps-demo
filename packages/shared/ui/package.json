@@ -1,5 +1,5 @@
 {
-  "name": "@my/components",
+  "name": "@my/ui",
   "type": "module",
   "version": "0.0.0",
   "devDependencies": {},

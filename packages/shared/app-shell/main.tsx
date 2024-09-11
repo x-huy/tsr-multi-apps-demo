@@ -13,13 +13,12 @@ const indexRoute = createRoute({
 });
 
 export const router = buildRouter([indexRoute, fooRoute]);
-export type RouterType = typeof router;
 
-// declare module '@tanstack/react-router' {
-//   interface Register {
-//     router: typeof router;
-//   }
-// }
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 export const AppShell = () => (
   <StrictMode>

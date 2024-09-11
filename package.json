@@ -38,6 +38,7 @@
     "vite": "^5.4.1"
   },
   "workspaces": [
-    "packages/*"
+    "packages/apps/*",
+    "packages/shared/*"
   ]
 }

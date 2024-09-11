@@ -1,17 +1,22 @@
 import { createRoute } from '@tanstack/react-router';
 import { rootRoute } from '@my/router';
-import { IndexPage } from './IndexPage';
 import { ViewPage } from './ViewPage';
+import { AddPage } from './AddPage';
 
 export const fooRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: 'foo',
 });
 
-const fooIndexRoute = createRoute({
+const indexRoute = createRoute({
   getParentRoute: () => fooRoute,
   path: '/',
-  component: IndexPage,
+}).lazy(() => import('./IndexPage').then((m) => m.Route));
+
+const addRoute = createRoute({
+  getParentRoute: () => fooRoute,
+  path: 'add',
+  component: AddPage,
 });
 
 const viewRoute = createRoute({
@@ -20,4 +25,4 @@ const viewRoute = createRoute({
   component: ViewPage,
 });
 
-fooRoute.addChildren([fooIndexRoute, viewRoute]);
+fooRoute.addChildren([indexRoute, addRoute, viewRoute]);
