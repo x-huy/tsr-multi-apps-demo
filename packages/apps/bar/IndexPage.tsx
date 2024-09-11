@@ -7,7 +7,7 @@ export const Route = createLazyRoute('/')({
 export function IndexPage() {
   return (
     <>
-      <h1>Index (/foo)</h1>
+      <h1>Index (/bar)</h1>
       <Link to="/add">Add</Link>
       <ul>
         <li>

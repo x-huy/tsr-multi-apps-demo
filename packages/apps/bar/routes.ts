@@ -34,7 +34,7 @@ const rootTree = rootRoute.addChildren([indexRoute, addRoute, viewRoute]);
 
 export const router = createRouter({
   routeTree: rootTree,
-  basepath: '/foo',
+  basepath: '/bar',
   history: createHashHistory(),
   defaultNotFoundComponent: PageNotFound,
 });

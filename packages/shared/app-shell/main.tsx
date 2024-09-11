@@ -1,27 +1,22 @@
 import { StrictMode } from 'react';
-import { createRoute, RouterProvider } from '@tanstack/react-router';
-import { IndexPage } from './IndexPage';
-import { fooRoute } from '@my/app-foo';
-import { buildRouter, rootRoute } from '@my/router';
+import { AppFoo } from '@my/app-foo';
+import { AppBar } from '@my/app-bar';
+import { useApp } from './useApp';
 
 import './index.css';
 
-const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/',
-  component: IndexPage,
-});
+export const AppShell = () => {
+  const app = useApp();
 
-export const router = buildRouter([indexRoute, fooRoute]);
-
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router;
-  }
-}
-
-export const AppShell = () => (
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-);
+  return (
+    <StrictMode>
+      <div className="p-3">
+        <div className="flex gap-3 text-white bg-black p-3 my-3">
+          <a href="#/foo">App Foo</a>|<a href="#/bar">App Bar</a>
+        </div>
+        {app === 'foo' && <AppFoo />}
+        {app === 'bar' && <AppBar />}
+      </div>
+    </StrictMode>
+  );
+};

@@ -1,1 +1,1 @@
-export { fooRoute } from './routes';
+export { AppFoo } from './main';
